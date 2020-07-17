@@ -33,7 +33,7 @@ jobs:
         # owner: # optional
       
     - name: Build and publish app to ./publish directory in Release mode
-      run: dotnet publish --configuration Release -o publish
+      run: dotnet publish --configuration Release -o $GITHUB_WORKSPACE/publish
 
     - name: Run app by generated EXE binary
       run: $GITHUB_WORKSPACE/publish/hello-world.exe
