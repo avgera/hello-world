@@ -34,4 +34,7 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Run a one-line script
-      run: dotnet HelloWorld
+      run: ./publish/hello-world.exe
+    
+    - name: Run a one-line script
+      run: dotnet ./publish/hello-world.dll
