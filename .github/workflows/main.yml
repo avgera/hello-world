@@ -32,9 +32,11 @@ jobs:
         # Optional OWNER for using packages from GitHub Package Registry organizations/users other than the current repository's owner. Only used if a GPR URL is also provided in source-url
         # owner: # optional
 
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
+    - name: Build and publish app to ./publish directory in Release mode
+      run: dotnet publish --configuration Release -o publish
+
+    - name: Run app by generated EXE binary
       run: ./publish/hello-world.exe
-    
-    - name: Run a one-line script
+
+    - name: Run app by generated DLL binary
       run: dotnet ./publish/hello-world.dll
